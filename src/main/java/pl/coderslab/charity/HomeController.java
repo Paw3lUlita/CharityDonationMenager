@@ -42,4 +42,9 @@ public class HomeController {
         return numberOfBags;
 
     }
+
+    @ModelAttribute("allDonations")
+    public int getNumberOfDonations(){
+        return donationRepository.findAll().size();
+    }
 }
