@@ -9,6 +9,8 @@ import pl.coderslab.charity.entity.Donation;
 import pl.coderslab.charity.entity.Institution;
 import pl.coderslab.charity.repository.DonationRepository;
 import pl.coderslab.charity.repository.InstitutionRepository;
+import pl.coderslab.charity.service.DonationService;
+import pl.coderslab.charity.service.InstitutionService;
 
 import java.util.List;
 
@@ -17,8 +19,8 @@ import java.util.List;
 @AllArgsConstructor
 public class HomeController {
 
-    private final InstitutionRepository institutionRepository;
-    private final DonationRepository donationRepository;
+    private final InstitutionService institutionService;
+    private final DonationService donationService;
 
     @RequestMapping("/")
     public String homeAction(Model model){
@@ -27,24 +29,17 @@ public class HomeController {
 
     @ModelAttribute("institutions")
     public List<Institution> getAllInstitutions(){
-        return institutionRepository.findAll();
+        return institutionService.findAll();
     }
 
     @ModelAttribute("allBags")
     public int getNumberOfBags(){
 
-        int numberOfBags = 0;
-
-        for (Donation d : donationRepository.findAll()){
-            numberOfBags += d.getQuantity();
-        }
-
-        return numberOfBags;
-
+        return donationService.getNumberOfBags();
     }
 
     @ModelAttribute("allDonations")
     public int getNumberOfDonations(){
-        return donationRepository.findAll().size();
+        return donationService.findAll().size();
     }
 }
