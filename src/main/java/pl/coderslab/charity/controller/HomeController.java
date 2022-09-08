@@ -17,12 +17,13 @@ import java.util.List;
 
 @Controller
 @AllArgsConstructor
+@RequestMapping("/")
 public class HomeController {
 
     private final InstitutionService institutionService;
     private final DonationService donationService;
 
-    @RequestMapping("/")
+    @RequestMapping("")
     public String homeAction(Model model){
         return "homepage/index";
     }
