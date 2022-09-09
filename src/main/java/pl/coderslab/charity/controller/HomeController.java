@@ -34,13 +34,13 @@ public class HomeController {
     }
 
     @ModelAttribute("allBags")
-    public int getNumberOfBags(){
+    public long getNumberOfBags(){
 
         return donationService.getNumberOfBags();
     }
 
     @ModelAttribute("allDonations")
-    public int getNumberOfDonations(){
-        return donationService.findAll().size();
+    public long getNumberOfDonations(){
+        return donationService.getTotal();
     }
 }
