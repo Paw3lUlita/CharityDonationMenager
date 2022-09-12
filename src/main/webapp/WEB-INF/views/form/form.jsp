@@ -41,9 +41,9 @@
 
                 <c:forEach var="category" items="${allCategories}">
                 <div class="form-group">
-
+                    <label>
                         <form:checkbox path="categories"  value="${category.id}" label="${category.name}"/>
-
+                    </label>
                 </div>
 
                 </c:forEach>
@@ -63,7 +63,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
-                        <input type="number" name="bags" step="1" min="1" />
+                        <form:input  path="quantity" />
                     </label>
                 </div>
 
