@@ -20,6 +20,10 @@ public class DonationService {
         return donationRepository.findAll();
     }
 
+    public void save(Donation donation){
+        donationRepository.save(donation);
+    }
+
     public long getNumberOfBags(){
 
         return donationRepository.getAllBags();
