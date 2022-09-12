@@ -109,30 +109,26 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <input type="text" name="address" /> </label>
+                            <label> Ulica <form:input path="street" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Miasto <input type="text" name="city" /> </label>
-                        </div>
-
-                        <div class="form-group form-group--inline">
-                            <label>
-                                Kod pocztowy <input type="text" name="postcode" />
-                            </label>
+                            <label> Miasto <form:input path="city" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Numer telefonu <input type="phone" name="phone" />
+                                Kod pocztowy <form:input path="zipCode" />
                             </label>
                         </div>
+
+
                     </div>
 
                     <div class="form-section--column">
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Data <input type="date" name="data" /> </label>
+                            <label> Data <input type="date" name="date" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
@@ -142,7 +138,7 @@
                         <div class="form-group form-group--inline">
                             <label>
                                 Uwagi dla kuriera
-                                <textarea name="more_info" rows="5"></textarea>
+                                <form:textarea path="pickUpComment"  rows="5" />
                             </label>
                         </div>
                     </div>
