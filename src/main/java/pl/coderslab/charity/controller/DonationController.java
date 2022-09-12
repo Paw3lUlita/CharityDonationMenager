@@ -21,7 +21,7 @@ public class DonationController {
     private final CategoryService categoryService;
     private final DonationService donationService;
 
-    @GetMapping("/donate")
+    @GetMapping("")
     public String showDonationForm(Model model){
         Donation donation = new Donation();
         model.addAttribute("donation", donation);
