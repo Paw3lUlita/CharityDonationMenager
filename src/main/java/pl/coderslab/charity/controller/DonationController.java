@@ -33,12 +33,14 @@ public class DonationController {
     }
 
     @PostMapping("")
-    public String saveDonation(Donation donation, @RequestParam(name = "date") String date, @RequestParam(name = "time") String time){
+    public String saveDonation(Donation donation, @RequestParam(name = "date") String date,
+                               @RequestParam(name = "time") String time, Model model){
 
         donation.setPickUpDate(LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
         donation.setPickUpTime(LocalTime.parse(time));
 
         donationService.save(donation);
+        model.addAttribute("donation", donation);
 
         return "form/confirmation";
 
