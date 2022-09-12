@@ -1,13 +1,36 @@
 package pl.coderslab.charity.service;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import pl.coderslab.charity.entity.Donation;
+import pl.coderslab.charity.repository.DonationRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
-public interface DonationService {
+@Service
+@Transactional
+@AllArgsConstructor
+public class DonationService {
 
-    List<Donation> findAll();
+    private final DonationRepository donationRepository;
 
-    int getNumberOfBags();
 
+    public List<Donation> findAll() {
+        return donationRepository.findAll();
+    }
+
+    public void save(Donation donation){
+        donationRepository.save(donation);
+    }
+
+    public long getNumberOfBags(){
+
+        return donationRepository.getAllBags();
+
+    }
+
+   public long getTotal(){
+        return donationRepository.count();
+   }
 }
