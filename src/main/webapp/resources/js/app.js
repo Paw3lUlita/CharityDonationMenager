@@ -165,6 +165,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // TODO: get data from inputs and show them in summary
 
+      document.querySelector("#sum1").innerText = document.querySelector("#info1").dataset.info + "\n"
+      + "Ilość worków:" + document.querySelector("#quant").value;
+
+
+      document.querySelector("#sum2").innerText = "Dla fundacji: " + document.querySelector("#info2").dataset.info;
+      document.querySelector("#sum3").innerText = document.querySelector("#info3").value;
+      document.querySelector("#sum4").innerText = document.querySelector("#info4").value;
+      document.querySelector("#sum5").innerText = document.querySelector("#info5").value;
+      document.querySelector("#sum6").innerText = document.querySelector("#info6").value;
+      document.querySelector("#sum7").innerText = document.querySelector("#info7").value;
+      document.querySelector("#sum8").innerText = document.querySelector("#info8").value;
 
     }
 
